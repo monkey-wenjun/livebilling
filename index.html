@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>直播流量计算</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+   <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+   <script src="js/index.js"></script>
+</head>
+<body>
+<div>
+	<div class="logo"><img src="images/168-50.png"></div>
+	<div  class="man">
+	<div class="man_top">
+		<p><h1>按流量计费</h1></p>
+	</div>
+	<div class="man_content">
+		<dir class="table" >
+		<table  border="0">
+			<tr>
+			<td>视频码率&nbsp;M</td>
+			<td>
+				<select id="M" name="M">
+				    <option value="2560">超清1080P（2560kbps）</option>
+					<option value="1152">高清720P（1152kbps）</option>
+                    <option value="	512" selected>标清480P（512kbps）</option>
+                    <option value="256">低清240P（256kbps）</option>
+				</select>
+			</td>
+			</tr>
+			<tr>
+			<td>观看并发数&nbsp;N</td>
+			<td>
+				<select id="N" name="N">
+					<option value="10000">10000人</option>
+                    <option value="1000">1000人</option>
+                    <option value="500">500人</option>
+                    <option value="200">200人</option>
+                    <option value="100" selected>100人</option>
+                    <option value="50">50人</option>
+                    <option value="10">10人</option>
+                    <option value="1">1人</option>
+                    <option value="0">自定义</option>
+				</select>
+			</td>
+			<td>
+				<div class="customNum"><input type="text" name=""></div>
+			</td>
+			</tr>
+			<td>播放时长&nbsp;T</td>
+			<td>
+				<select id="T" name="T">
+	                <option value="1440">24小时</option>
+	                <option value="960">16小时</option>
+	                <option value="480">8小时</option>
+	                <option value="240">4小时</option>
+	                <option value="180">3小时</option>
+	                <option value="120">2小时</option>
+	                <option value="60" selected>1小时</option>
+	                <option value="30">30分钟</option>
+	                
+				</select>
+			</td>
+			</tr>
+			<tr>
+			<td>直播费用&nbsp;</td>
+			<td>
+			<label id="count" >9.45</label>元
+			</td>
+			</tr>
+		</table>
+		<span class="info"><b>计算公式:&nbsp;</b>(码率/8)*(分钟*60)*观看人数/1024/1024*0.43
+		比如1个人观看1小时的超清直播。其计算公式是:(2560/8)*(60*60)*1/1024/1024*0.43 =0.472元。
+		</span>	
+	</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>
